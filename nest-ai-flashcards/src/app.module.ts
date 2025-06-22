@@ -10,7 +10,9 @@ import { FlashcardModule } from './flashcard/flashcard.module';
 import {FlashcardFormatterService} from "./flashcard/flashcard-formatter.service";
 
 @Module({
-  imports: [OpenRouterModule, ConfigModule.forRoot({ isGlobal: true }), FlashcardModule],
+  imports: [OpenRouterModule, ConfigModule.forRoot({
+    isGlobal: true,
+    envFilePath: '.env', }), FlashcardModule],
   controllers: [AppController, PhraseController],
   providers: [AppService, OpenRouterService, PhraseService, FlashcardFormatterService],
 })
